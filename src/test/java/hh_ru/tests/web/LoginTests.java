@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class LoginTests {
+public class LoginTests extends TestBase{
     @Test
     @Tag("smoke")
     @AllureId("1841")

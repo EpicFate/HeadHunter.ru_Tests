@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class SearchOnTheSite_Tests {
+public class SearchOnTheSite_Tests extends TestBase {
 
     @Test
     @AllureId("1843")

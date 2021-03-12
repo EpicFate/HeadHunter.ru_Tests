@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class PriceList_Tests {
+public class PriceList_Tests extends TestBase {
     @Test
     @AllureId("1840")
     @DisplayName("Добавление услуги 'Выборка в регионах' в корзину")
