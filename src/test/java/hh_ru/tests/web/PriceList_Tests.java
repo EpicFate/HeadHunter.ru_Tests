@@ -69,11 +69,11 @@ public class PriceList_Tests extends TestBase {
         });
 
         step("Проверить что вкладка открылась", (step) -> {
-            $x("(//*[@class='price-services-item__header'])[4]").shouldHave(text("Вся Россия"));
+            $x("(//*[@class='price-services-item__header'])[2]").shouldHave(text("Вся Россия"));
         });
 
         step("В столбце Вся Россия выбрать 3 месяца", (step) -> {
-            $x("(//*[@data-qa='cart-item__period'])[4]").selectOption("3 месяца");
+            $x("(//*[@data-qa='cart-item__period'])[2]").selectOption("3 месяца");
         });
 
         step("Проверить что 3 месяца выбрано верно", (step) -> {
@@ -82,7 +82,7 @@ public class PriceList_Tests extends TestBase {
 
         step("Нажать кнопку В корзину", (step) -> {
 //            $("[data-qa='cart-resume-access__button-add']").click();
-            $x("(//*[@data-qa='cart-resume-access__button-add'])[4]").click();
+            $x("(//*[@data-qa='cart-resume-access__button-add'])[2]").click();
         });
 
         step("Проверить что услуга в корзине", (step) -> {
