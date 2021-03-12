@@ -62,15 +62,10 @@ tasks.withType(Test) {
         ]
     }
 
-    if (System.getProperty("environment") == null) {
-        System.setProperty("environment", "preprod") // prod
-    }
-    println "Tests started for " + System.getProperty("environment") + " environment"
-
     testLogging {
         lifecycle {
             events "started", "failed"
-//            events "started", "skipped", "failed", "standard_error", "standard_out"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
     }
