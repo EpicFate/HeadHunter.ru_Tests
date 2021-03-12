@@ -61,7 +61,7 @@ public class PriceList_Tests extends TestBase {
             open("https://hh.ru/price/recommended?from=header_new");
         });
         step("Проверить что страница открылась", (step) -> {
-            $("[data-qa='cart__page-title']").shouldHave(text("Покупка услуг по подбору персонала в Краснодаре"));
+            $("[data-qa='cart__page-title']").shouldHave(text("Покупка услуг по подбору персонала в"));
         });
 
         step("Перейти на вкладку Доступ к базе резюме", (step) -> {
