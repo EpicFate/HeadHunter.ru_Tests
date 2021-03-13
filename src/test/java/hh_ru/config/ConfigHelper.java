@@ -11,7 +11,7 @@ public class ConfigHelper {
     public static String getWebRemoteDriver() {
         return "https://" + getWebConfig().webRemoteDriverUser() + ":" +
                 getWebConfig().webRemoteDriverPassword() + "@" +
-                getWebConfig().webRemoteDriverUrl() + "/wd/hub";
+                getWebConfig().webRemoteDriverUrl() + ":4444/wd/hub/";
     }
 
     public static boolean isRemoteWebDriver() {
