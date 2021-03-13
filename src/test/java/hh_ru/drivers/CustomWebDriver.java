@@ -13,6 +13,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static com.codeborne.selenide.Browsers.CHROME;
+import static hh_ru.config.ConfigHelper.*;
 
 
 public class CustomWebDriver implements WebDriverProvider {
@@ -22,17 +23,23 @@ public class CustomWebDriver implements WebDriverProvider {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         capabilities.setCapability("videoFrameRate", 24);
-
         capabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
         WebDriverManager.chromedriver().setup();
 
-        if(System.getProperty("remote.browser.url") != null) {
-            RemoteWebDriver remoteWebDriver = new RemoteWebDriver(getRemoteWebdriverUrl(), capabilities);
-            remoteWebDriver.setFileDetector(new LocalFileDetector());
+        switch (getWebBrowser()) {
+            case "chrome":
+                capabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
+                WebDriverManager.chromedriver().setup();
+                break;
+            case "opera":
+                // todo
+                break;
+        }
 
-            return remoteWebDriver;
+        if (isRemoteWebDriver()) {
+            return getRemoteWebDriver(capabilities);
         } else {
-            return new ChromeDriver(capabilities);
+            return getLocalChromeDriver(capabilities);
         }
     }
 
@@ -47,9 +54,21 @@ public class CustomWebDriver implements WebDriverProvider {
         return chromeOptions;
     }
 
+    @SuppressWarnings("deprecation")
+    private WebDriver getLocalChromeDriver(DesiredCapabilities capabilities) {
+        return new ChromeDriver(capabilities);
+    }
+
+    private WebDriver getRemoteWebDriver(DesiredCapabilities capabilities) {
+        RemoteWebDriver remoteWebDriver = new RemoteWebDriver(getRemoteWebdriverUrl(), capabilities);
+        remoteWebDriver.setFileDetector(new LocalFileDetector());
+
+        return remoteWebDriver;
+    }
+
     private URL getRemoteWebdriverUrl() {
         try {
-            return new URL(System.getProperty("remote.browser.url") + ":4444/wd/hub/");
+            return new URL(getWebRemoteDriver());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

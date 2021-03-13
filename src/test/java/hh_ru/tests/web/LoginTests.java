@@ -1,6 +1,7 @@
 package hh_ru.tests.web;
 
 import hh_ru.allure.Layer;
+import hh_ru.config.ConfigHelper;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -15,13 +16,17 @@ import static io.qameta.allure.Allure.step;
 
 @Layer("web")
 @Owner("EpicFate")
-public class LoginTests extends TestBase{
+public class LoginTests extends TestBase {
+
     @Test
     @Tag("smoke")
     @AllureId("1841")
     @DisplayName("Успешная авторизация")
     @Feature("Авторизация")
     void successfulLoginTest() {
+        String Email = ConfigHelper.getHHruEmail();
+        String Password = ConfigHelper.getHHruPassword();
+
         step("Открыть страницу https://hh.ru", (step) -> {
             open("https://hh.ru");
         });
@@ -39,11 +44,11 @@ public class LoginTests extends TestBase{
         });
 
         step("Ввести Email", (step) -> {
-            $("[data-qa='login-input-username']").val("hhtestqaguru@gmail.com");
+            $("[data-qa='login-input-username']").val(Email);
         });
 
         step("Ввести Пароль", (step) -> {
-            $("[data-qa='login-input-password']").val("Bb11223344");
+            $("[data-qa='login-input-password']").val(Password);
         });
 
         step("Нажать кнопку Войти в личный Кабинет", (step) -> {
@@ -77,11 +82,11 @@ public class LoginTests extends TestBase{
         });
 
         step("Ввести Email", (step) -> {
-            $("[data-qa='login-input-username']").val(" ");
+            $("[data-qa='login-input-username']").val("33333");
         });
 
         step("Ввести Пароль", (step) -> {
-            $("[data-qa='login-input-password']").val(" ");
+            $("[data-qa='login-input-password']").val("33333");
         });
 
         step("Нажать кнопку Войти в личный Кабинет", (step) -> {
