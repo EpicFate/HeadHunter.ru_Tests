@@ -19,9 +19,9 @@ import static io.qameta.allure.Allure.step;
 public class PriceList_Tests extends TestBase {
     @Test
     @AllureId("1840")
+    @Story("Выборки резюме")
     @DisplayName("Добавление услуги 'Выборка в регионах' в корзину")
     @Tag("smoke")
-    @Story("Выборки резюме")
     @Feature("Прайс-лист")
     void addingSelectionInRegionsToTheBasket() {
         step("Открыть страницу https://hh.ru/price/recommended?from=header_new", (step) -> {
@@ -56,9 +56,9 @@ public class PriceList_Tests extends TestBase {
 
     @Test
     @AllureId("1839")
+    @Story("Доступ к базе резюме")
     @DisplayName("Добавление услуги 'Вся Россия' в корзину")
     @Tag("smoke")
-    @Story("Доступ к базе резюме")
     @Feature("Прайс-лист")
     void addingAllRussiaToTheBasket() {
         step("Открыть страницу https://hh.ru/price/recommended?from=header_new", (step) -> {
@@ -96,9 +96,9 @@ public class PriceList_Tests extends TestBase {
 
     @Test
     @AllureId("1837")
+    @Story("Размещение вакансий")
     @DisplayName("Добавление услуги 'Премиум' в корзину ")
     @Tag("smoke")
-    @Story("Размещение вакансий")
     @Feature("Прайс-лист")
     void addingPremiumToTheCart() {
         step("Открыть страницу https://hh.ru/price/recommended?from=header_new", (step) -> {
