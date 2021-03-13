@@ -97,7 +97,7 @@ public class PriceList_Tests extends TestBase {
     @Test
     @AllureId("1837")
     @Story("Размещение вакансий")
-    @DisplayName("Добавление услуги 'Премиум' в корзину ")
+    @DisplayName("Добавление услуги 'Премиум' в корзину")
     @Tag("smoke")
     @Feature("Прайс-лист")
     void addingPremiumToTheCart() {
