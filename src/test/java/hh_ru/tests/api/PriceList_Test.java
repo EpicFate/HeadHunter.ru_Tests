@@ -3,6 +3,7 @@ package hh_ru.tests.api;
 import hh_ru.allure.Layer;
 import hh_ru.config.ApiConfigHelper;
 import hh_ru.model.AllRussiaToTheBasket_model;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -19,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PriceList_Test {
 
     @Test
+    @AllureId("1894")
     @Story("Доступ к базе резюме")
     @DisplayName("Добавление услуги 'Вся Россия' в корзину")
     @Tag("smoke")
