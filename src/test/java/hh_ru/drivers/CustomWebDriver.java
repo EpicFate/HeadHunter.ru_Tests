@@ -36,11 +36,11 @@ public class CustomWebDriver implements WebDriverProvider {
                 break;
         }
 
-//        if (isRemoteWebDriver()) {
-//            return getRemoteWebDriver(capabilities);
-//        } else {
+        if (isRemoteWebDriver()) {
+            return getRemoteWebDriver(capabilities);
+        } else {
             return getLocalChromeDriver(capabilities);
-//        }
+        }
     }
 
     private ChromeOptions getChromeOptions() {
