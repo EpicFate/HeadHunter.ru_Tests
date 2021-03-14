@@ -25,15 +25,15 @@ _Ссылкана на отчет:_ https://jenkins.autotests.cloud/job/c03-hh.r
 ![allure screenshot](src/test/resources/images/allure_3.png)
 
 ### *Allure TestOps:*
-![allure screenshot](src/test/resources/images/allure_testops_1.png)
-![allure screenshot](src/test/resources/images/allure_testops_2.png)
-![allure screenshot](src/test/resources/images/allure_testops_3.png)
-![allure screenshot](src/test/resources/images/allure_testops_4.png)
+![allure_testops screenshot](src/test/resources/images/allure_testops_1.png)
+![allure_testops screenshot](src/test/resources/images/allure_testops_2.png)
+![allure_testops screenshot](src/test/resources/images/allure_testops_3.png)
+![allure_testops screenshot](src/test/resources/images/allure_testops_4.png)
 
 ### *Jira:*
-![allure screenshot](src/test/resources/images/jira_1.png)
-![allure screenshot](src/test/resources/images/jira_2.png)
-![allure screenshot](src/test/resources/images/error.png)
+![jira screenshot](src/test/resources/images/jira_1.png)
+![jira screenshot](src/test/resources/images/jira_2.png)
+![jira screenshot](src/test/resources/images/error.png)
 
 ### *Telegram notification:*
-![allure screenshot](src/test/resources/images/telegram.png)
+![telegram screenshot](src/test/resources/images/telegram.png)
