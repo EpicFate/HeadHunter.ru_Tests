@@ -13,6 +13,7 @@ https://jenkins.autotests.cloud/job/c03-hh.ru/
 
 ### *Selenoid:*
 ![selenoid screenshot](src/test/resources/images/selenoid.png)
+![selenoid screenshot](src/test/resources/images/selenoid1.png)
 ![selenoid screenshot](src/test/resources/images/selenoid.gif)
 
 ### *Allure Report:*
