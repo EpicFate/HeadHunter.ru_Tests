@@ -32,8 +32,6 @@ _Ссылкана на отчет:_ https://jenkins.autotests.cloud/job/c03-hh.r
 
 ### *Jira:*
 ![jira screenshot](src/test/resources/images/jira_1.png)
-![jira screenshot](src/test/resources/images/jira_2.png)
-![jira screenshot](src/test/resources/images/error.png)
 
 ### *Telegram notification:*
 ![telegram screenshot](src/test/resources/images/telegram.png)
