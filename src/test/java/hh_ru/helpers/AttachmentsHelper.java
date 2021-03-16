@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static hh_ru.config.ConfigHelper.isRemoteWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 
@@ -38,7 +39,7 @@ public class AttachmentsHelper {
     }
 
     public static String getVideoUrl() {
-        return System.getProperty("remote.browser.url") + "/video/" + getSessionId() + ".mp4";
+        return "https://" + isRemoteWebDriver() + "/video/" + getSessionId() + ".mp4";
     }
 
     public static String getSessionId(){
