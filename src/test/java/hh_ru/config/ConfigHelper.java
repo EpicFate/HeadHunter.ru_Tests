@@ -18,6 +18,10 @@ public class ConfigHelper {
         return !getWebConfig().webRemoteDriverUrl().equals("");
     }
 
+    public static String getWebVideoStorage() {
+        return "https://" + getWebConfig().webRemoteDriverUrl() + "/video/";
+    }
+
     public static String getHHruEmail() {
         return getAuthorizationConfig().HHruEmail();
     }

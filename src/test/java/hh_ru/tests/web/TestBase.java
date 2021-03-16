@@ -20,11 +20,12 @@ public class TestBase {
     }
 
     @AfterEach
-    public void Attachments(){
+    public void Attachments() {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
         attachVideo();
+
         closeWebDriver();
     }
 }
