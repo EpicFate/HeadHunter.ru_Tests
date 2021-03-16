@@ -20,6 +20,7 @@ public class CustomWebDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
         capabilities.setBrowserName(CHROME);
+        capabilities.setCapability("locationContextEnabled", false);
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         capabilities.setCapability("videoFrameRate", 24);
