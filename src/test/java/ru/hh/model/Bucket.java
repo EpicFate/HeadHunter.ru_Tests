@@ -19,7 +19,7 @@ import java.util.Map;
         "autoActivationAware",
         "autoActivationAllowed"
 })
-public class Basket {
+public class Bucket {
 
     @JsonProperty("defaultDiscountRate")
     private Integer defaultDiscountRate;
