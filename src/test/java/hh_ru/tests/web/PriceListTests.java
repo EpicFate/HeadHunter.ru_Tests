@@ -34,6 +34,7 @@ public class PriceListTests extends TestBase {
                 $(".HH-StickyParentAreaResizer-Content").shouldHave(text("Выборка в регионах")));
 
         step("Выбрать количство и подтвердить", () -> {
+
             step("В столбце Выборка в регионах задать количество", () ->
                     $("[data-code='REGIONAL_VSIM']").val("100"));
 
@@ -67,6 +68,7 @@ public class PriceListTests extends TestBase {
                 $x("(//*[@class='price-services-item__header'])[2]").shouldHave(text("Вся Россия")));
 
         step("Выбрать количство и подтвердить", () -> {
+
             step("В столбце Вся Россия выбрать 3 месяца", () ->
                     $x("(//*[@class='bloko-select                                            " +
                             "HH-Adaptive-Resume-Access-PeriodSelect'])[2]").selectOption("3 месяца"));
@@ -100,6 +102,7 @@ public class PriceListTests extends TestBase {
                 $(".bloko-section").shouldHave(text("Премиум")));
 
         step("Выбрать количство и подтвердить", () -> {
+
             step("В столбце премиум ввести 100 шт.", () ->
                     $x("(//*[@data-qa='price__input'])[1]").val("100"));
 
