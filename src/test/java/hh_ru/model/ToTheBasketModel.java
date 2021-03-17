@@ -19,7 +19,7 @@ import java.util.Map;
         "autoActivationAware",
         "autoActivationAllowed"
 })
-public class AllRussiaToTheBasket_model {
+public class ToTheBasketModel {
 
     @JsonProperty("defaultDiscountRate")
     private Integer defaultDiscountRate;

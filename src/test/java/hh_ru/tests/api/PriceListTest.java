@@ -2,7 +2,7 @@ package hh_ru.tests.api;
 
 import hh_ru.allure.Layer;
 import hh_ru.config.ApiConfigHelper;
-import hh_ru.model.AllRussiaToTheBasket_model;
+import hh_ru.model.ToTheBasketModel;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Layer("api")
 @Owner("EpicFate")
-public class PriceList_Test {
+public class PriceListTest {
 
     @Test
     @AllureId("1894")
@@ -30,11 +30,12 @@ public class PriceList_Test {
         String cookie = ApiConfigHelper.getCookie();
         String contentType = ApiConfigHelper.getContentType();
         String post = ApiConfigHelper.getPost();
+        String header = ApiConfigHelper.getHeader();
 
-        AllRussiaToTheBasket_model response = given()
+        ToTheBasketModel response = given()
                 .contentType(contentType)
                 .cookie(cookie)
-                .header("X-Xsrftoken", "678d3cc0bab19ff1f0efc9bda5ad93d2")
+                .header("X-Xsrftoken", header)
                 .body(body)
                 .filter(filters().customTemplates())
                 .log().uri()
@@ -43,7 +44,7 @@ public class PriceList_Test {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .extract().as(AllRussiaToTheBasket_model.class);
+                .extract().as(ToTheBasketModel.class);
 
         assertEquals(response.getCost(), 254800.0);
     }

@@ -19,4 +19,7 @@ public interface ApiConfig extends Config {
 
     @Key("Post")
     String Post();
+
+    @Key("Header")
+    String Header();
 }

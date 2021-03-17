@@ -14,7 +14,7 @@ import static io.qameta.allure.Allure.step;
 
 @Layer("web")
 @Owner("EpicFate")
-public class SearchOnTheSite_Tests extends TestBase {
+public class SearchOnTheSiteTests extends TestBase {
 
     @Test
     @AllureId("1843")

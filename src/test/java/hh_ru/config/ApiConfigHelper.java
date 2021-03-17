@@ -20,6 +20,10 @@ public class ApiConfigHelper {
         return getConfig().Post();
     }
 
+    public static String getHeader() {
+        return getConfig().Header();
+    }
+
     private static ApiConfig getConfig() {
         return ConfigFactory.newInstance().create(ApiConfig.class);
     }
