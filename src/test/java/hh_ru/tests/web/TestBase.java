@@ -21,10 +21,12 @@ public class TestBase {
 
     @AfterEach
     public void Attachments() {
+        String sessionId = getSessionId();
+
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
-        attachVideo();
+        attachVideo(sessionId);
 
         closeWebDriver();
     }

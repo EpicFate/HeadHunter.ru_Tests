@@ -9,17 +9,14 @@ public class ConfigHelper {
     }
 
     public static String getWebRemoteDriver() {
-        return "https://" + getWebConfig().webRemoteDriverUser() + ":" +
-                getWebConfig().webRemoteDriverPassword() + "@" +
-                getWebConfig().webRemoteDriverUrl() + ":4444/wd/hub/";
-    }
-
-    public static boolean isRemoteWebDriver() {
-        return !getWebConfig().webRemoteDriverUrl().equals("");
+        // https://%s:%s@selenoid.autotests.cloud/wd/hub/
+        return String.format(System.getProperty("web.remote.driver"),
+                getWebConfig().webRemoteDriverUser(),
+                getWebConfig().webRemoteDriverPassword());
     }
 
     public static String getWebVideoStorage() {
-        return "https://" + getWebConfig().webRemoteDriverUrl() + "/video/";
+        return System.getProperty("video.storage");
     }
 
     public static String getHHruEmail() {

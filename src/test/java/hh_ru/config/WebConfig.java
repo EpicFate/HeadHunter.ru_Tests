@@ -12,9 +12,6 @@ public interface WebConfig extends Config {
     @Key("web.browser")
     String webBrowser();
 
-    @Key("web.remote.driver.url")
-    String webRemoteDriverUrl();
-
     @Key("web.remote.driver.user")
     String webRemoteDriverUser();
 
