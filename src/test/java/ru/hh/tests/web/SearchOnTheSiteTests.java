@@ -1,6 +1,6 @@
-package hh_ru.tests.web;
+package ru.hh.tests.web;
 
-import hh_ru.allure.Layer;
+import ru.hh.allure.Layer;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;

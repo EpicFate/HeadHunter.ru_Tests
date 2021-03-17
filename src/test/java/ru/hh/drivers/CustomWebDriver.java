@@ -1,4 +1,4 @@
-package hh_ru.drivers;
+package ru.hh.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -13,7 +13,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static com.codeborne.selenide.Browsers.CHROME;
-import static hh_ru.config.ConfigHelper.*;
+import static ru.hh.config.ConfigHelper.*;
 
 
 public class CustomWebDriver implements WebDriverProvider {

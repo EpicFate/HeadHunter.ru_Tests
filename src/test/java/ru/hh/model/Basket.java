@@ -1,4 +1,4 @@
-package hh_ru.model;
+package ru.hh.model;
 
 
 import com.fasterxml.jackson.annotation.*;
@@ -19,7 +19,7 @@ import java.util.Map;
         "autoActivationAware",
         "autoActivationAllowed"
 })
-public class ToTheBasketModel {
+public class Basket {
 
     @JsonProperty("defaultDiscountRate")
     private Integer defaultDiscountRate;

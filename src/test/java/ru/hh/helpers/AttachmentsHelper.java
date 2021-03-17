@@ -1,17 +1,17 @@
-package hh_ru.helpers;
+package ru.hh.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import ru.hh.config.ConfigHelper;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static hh_ru.config.ConfigHelper.getWebVideoStorage;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 
@@ -46,7 +46,7 @@ public class AttachmentsHelper {
 
     public static String getWebVideoUrl(String sessionId) {
         try {
-            return new URL(getWebVideoStorage() + sessionId + ".mp4") + "";
+            return new URL(ConfigHelper.getWebVideoStorage() + sessionId + ".mp4") + "";
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

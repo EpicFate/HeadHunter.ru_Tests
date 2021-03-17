@@ -1,4 +1,4 @@
-package hh_ru.report;
+package ru.hh.report;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 

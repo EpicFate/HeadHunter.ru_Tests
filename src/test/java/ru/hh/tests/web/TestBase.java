@@ -1,15 +1,15 @@
-package hh_ru.tests.web;
+package ru.hh.tests.web;
 
 import com.codeborne.selenide.Configuration;
 
-import hh_ru.drivers.CustomWebDriver;
+import ru.hh.drivers.CustomWebDriver;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static hh_ru.helpers.AttachmentsHelper.*;
+import static ru.hh.helpers.AttachmentsHelper.*;
 
 public class TestBase {
     @BeforeAll

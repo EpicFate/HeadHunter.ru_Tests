@@ -1,4 +1,4 @@
-package hh_ru.config;
+package ru.hh.config;
 
 import org.aeonbits.owner.ConfigFactory;
 

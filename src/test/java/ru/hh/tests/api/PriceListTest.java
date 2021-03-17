@@ -1,8 +1,8 @@
-package hh_ru.tests.api;
+package ru.hh.tests.api;
 
-import hh_ru.allure.Layer;
-import hh_ru.config.ApiConfigHelper;
-import hh_ru.model.ToTheBasketModel;
+import ru.hh.allure.Layer;
+import ru.hh.config.ApiConfigHelper;
+import ru.hh.model.Basket;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -10,8 +10,8 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import ru.hh.report.Report;
 
-import static hh_ru.report.Report.filters;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -32,19 +32,19 @@ public class PriceListTest {
         String post = ApiConfigHelper.getPost();
         String header = ApiConfigHelper.getHeader();
 
-        ToTheBasketModel response = given()
+        Basket response = given()
                 .contentType(contentType)
                 .cookie(cookie)
                 .header("X-Xsrftoken", header)
                 .body(body)
-                .filter(filters().customTemplates())
+                .filter(Report.filters().customTemplates())
                 .log().uri()
                 .when()
                 .post(post)
                 .then()
                 .log().all()
                 .statusCode(200)
-                .extract().as(ToTheBasketModel.class);
+                .extract().as(Basket.class);
 
         assertEquals(response.getCost(), 254800.0);
     }

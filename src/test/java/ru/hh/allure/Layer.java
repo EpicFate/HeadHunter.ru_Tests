@@ -1,4 +1,4 @@
-package hh_ru.allure;
+package ru.hh.allure;
 
 import io.qameta.allure.LabelAnnotation;
 
