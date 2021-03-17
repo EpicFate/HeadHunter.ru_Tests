@@ -23,6 +23,7 @@ _Ссылкана на отчет:_ https://jenkins.autotests.cloud/job/c03-hh.r
 ![allure screenshot](src/test/resources/images/allure_1.png)
 ![allure screenshot](src/test/resources/images/allure_2.png)
 ![allure screenshot](src/test/resources/images/allure_3.png)
+![allure screenshot](src/test/resources/images/allure_4.png)
 
 ### *Allure TestOps:*
 ![allure_testops screenshot](src/test/resources/images/allure_testops_1.png)
