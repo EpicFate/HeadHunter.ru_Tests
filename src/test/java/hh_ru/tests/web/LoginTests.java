@@ -32,38 +32,31 @@ public class LoginTests extends TestBase {
 
 
         step("Проверить что страница открылась", () ->
-                $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого"))
-        );
+                $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого")));
 
 
         step("Нажать кнопку Войти", () ->
-                $(".supernova-navi_dashboard").$(byText("Войти")).click()
-        );
+                $(".supernova-navi_dashboard").$(byText("Войти")).click());
 
 
         step("Проверить что страница сменилась", () ->
-                $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет"))
-        );
+                $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет")));
 
         step("Заполнить форму", () -> {
 
             step("Ввести Email", () ->
-                    $("[data-qa='login-input-username']").val(Email)
-            );
+                    $("[data-qa='login-input-username']").val(Email));
 
 
             step("Ввести Пароль", () ->
-                    $("[data-qa='login-input-password']").val(Password)
-            );
+                    $("[data-qa='login-input-password']").val(Password));
 
             step("Нажать кнопку Войти в личный Кабинет", () ->
-                    $("[data-qa='account-login-submit']").click()
-            );
+                    $("[data-qa='account-login-submit']").click());
         });
 
         step("Поверить что мы зашли в личный кабинет", () ->
-                $(".index-dashboard-main-header").shouldHave(text("Найди работу мечты"))
-        );
+                $(".index-dashboard-main-header").shouldHave(text("Найди работу мечты")));
 
     }
 
@@ -73,39 +66,31 @@ public class LoginTests extends TestBase {
     @Feature("Авторизация")
     void unsuccessfulLoginTest() {
         step("Открыть страницу https://hh.ru", () ->
-                open("https://hh.ru")
-        );
+                open("https://hh.ru"));
 
         step("Проверить что страница открылась", () ->
-                $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого"))
-        );
+                $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого")));
 
         step("Нажать кнопку Войти", () ->
-                $(".supernova-navi_dashboard").$(byText("Войти")).click()
-        );
+                $(".supernova-navi_dashboard").$(byText("Войти")).click());
 
 
         step("Проверить что страница сменилась", () ->
-                $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет"))
-        );
+                $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет")));
 
         step("Заполнить форму", () -> {
 
             step("Ввести Email", () ->
-                    $("[data-qa='login-input-username']").val("33333")
-            );
+                    $("[data-qa='login-input-username']").val("33333"));
 
             step("Ввести Пароль", () ->
-                    $("[data-qa='login-input-password']").val("33333")
-            );
+                    $("[data-qa='login-input-password']").val("33333"));
 
             step("Нажать кнопку Войти в личный Кабинет", () ->
-                    $("[data-qa='account-login-submit']").click()
-            );
+                    $("[data-qa='account-login-submit']").click());
         });
 
         step("Поверить что мы зашли в личный кабинет", () ->
-                $(".index-dashboard-main-header").shouldHave(text("Найди работу мечты"))
-        );
+                $(".index-dashboard-main-header").shouldHave(text("Найди работу мечты")));
     }
 }

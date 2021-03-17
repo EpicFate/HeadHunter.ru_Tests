@@ -23,20 +23,16 @@ public class SearchOnTheSiteTests extends TestBase {
     void resumeSearch() {
 
         step("Открыть страницу https://hh.ru/employer", () ->
-            open("https://hh.ru/employer")
-        );
+            open("https://hh.ru/employer"));
 
         step("Ввести в строку поиска Qa engineer", () ->
-            $("[data-qa='search-input']").val("Qa engineer")
-        );
+            $("[data-qa='search-input']").val("Qa engineer"));
 
         step("Нажать кнопку Найти сотрудника", () ->
-            $(".supernova-search-group__submit ").click()
-        );
+            $(".supernova-search-group__submit ").click());
 
         step("Проверить что поиск удался", () ->
-            $$("[class='resume-search-item']").shouldHaveSize(20)
-        );
+            $$("[class='resume-search-item']").shouldHaveSize(20));
     }
 
     @Test
@@ -45,24 +41,19 @@ public class SearchOnTheSiteTests extends TestBase {
     @Feature("Поиск по сайту ")
     void searchVacancy() {
         step("Открыть страницу https://hh.ru/employer", () ->
-            open("https://hh.ru/employer")
-        );
+            open("https://hh.ru/employer"));
 
         step("Выбрать в поиске вкладку Вакансии", () ->
-            $("[data-qa='search-select']").$(byText("Вакансии")).click()
-        );
+            $("[data-qa='search-select']").$(byText("Вакансии")).click());
 
         step("Ввести в строку поиска Qa engineer", () ->
-            $("[data-qa='search-input']").val("Qa engineer")
-        );
+            $("[data-qa='search-input']").val("Qa engineer"));
 
         step("Нажать кнопку Найти сотрудника", () ->
-            $(".supernova-search-group__submit ").click()
-        );
+            $(".supernova-search-group__submit ").click());
 
         step("Проверить что поиск удался", () ->
-            $$("[data-qa='vacancy-serp__vacancy']").shouldHaveSize(45)
-        );
+            $$("[data-qa='vacancy-serp__vacancy']").shouldHaveSize(45));
     }
 
     @Test
@@ -71,23 +62,18 @@ public class SearchOnTheSiteTests extends TestBase {
     @Feature("Поиск по сайту ")
     void searchCompany() {
         step("Открыть страницу https://hh.ru/employer", () ->
-            open("https://hh.ru/employer")
-        );
+            open("https://hh.ru/employer"));
 
         step("Выбрать в поиске вкладку Компании", () ->
-            $("[data-qa='search-select']").$(byText("Компании")).click()
-        );
+            $("[data-qa='search-select']").$(byText("Компании")).click());
 
         step("Ввести в строку поиска Headhunter", () ->
-            $("[data-qa='search-input']").val("Headhunter")
-        );
+            $("[data-qa='search-input']").val("Headhunter"));
 
         step("Нажать кнопку Найти сотрудника", () ->
-            $(".supernova-search-group__submit ").click()
-        );
+            $(".supernova-search-group__submit ").click());
 
         step("Проверить что поиск удался", () ->
-            $(".l-nopaddings").shouldHave(text("HeadHunter"))
-        );
+            $(".l-nopaddings").shouldHave(text("HeadHunter")));
     }
 }
