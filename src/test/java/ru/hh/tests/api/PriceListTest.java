@@ -2,7 +2,7 @@ package ru.hh.tests.api;
 
 import ru.hh.allure.Layer;
 import ru.hh.config.ApiConfigHelper;
-import ru.hh.model.Backet;
+import ru.hh.model.Basket;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -32,7 +32,7 @@ public class PriceListTest {
         String post = ApiConfigHelper.getPost();
         String header = ApiConfigHelper.getHeader();
 
-        Backet response = given()
+        Basket response = given()
                 .contentType(contentType)
                 .cookie(cookie)
                 .header("X-Xsrftoken", header)
@@ -44,7 +44,7 @@ public class PriceListTest {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .extract().as(Backet.class);
+                .extract().as(Basket.class);
 
         assertEquals(response.getCost(), 254800.0);
     }
