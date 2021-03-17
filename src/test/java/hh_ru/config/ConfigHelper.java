@@ -15,6 +15,10 @@ public class ConfigHelper {
                 getWebConfig().webRemoteDriverPassword());
     }
 
+    public static boolean isRemoteWebDriver() {
+        return getWebRemoteDriver().equals("");
+    }
+
     public static String getWebVideoStorage() {
         return System.getProperty("video.storage");
     }
