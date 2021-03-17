@@ -29,18 +29,14 @@ public class PriceListTests extends TestBase {
 
         step("Перейти на вкладку Выборки резюме", () ->
                 $(".bloko-tabs__items").$(byText("Выборки резюме")).click());
-
         step("Проверить что вкладка открылась", () ->
                 $(".HH-StickyParentAreaResizer-Content").shouldHave(text("Выборка в регионах")));
 
         step("Выбрать количство и подтвердить", () -> {
-
             step("В столбце Выборка в регионах задать количество", () ->
                     $("[data-code='REGIONAL_VSIM']").val("100"));
-
             step("Проверить что сумма изменилась", () ->
                     $("[data-qa='cart-item REGIONAL_VSIM']").shouldHave(text("275 000")));
-
             step("Нажать В корзину", () ->
                     $("[data-qa='cart-item REGIONAL_VSIM']").$(byText("В корзину")).click());
         });
@@ -63,20 +59,16 @@ public class PriceListTests extends TestBase {
 
         step("Перейти на вкладку Доступ к базе резюме", () ->
                 $(".bloko-tabs__items").$(byText("Доступ к базе резюме")).click());
-
         step("Проверить что вкладка открылась", () ->
                 $x("(//*[@class='price-services-item__header'])[2]").shouldHave(text("Вся Россия")));
 
         step("Выбрать количство и подтвердить", () -> {
-
             step("В столбце Вся Россия выбрать 3 месяца", () ->
                     $x("(//*[@class='bloko-select                                            " +
                             "HH-Adaptive-Resume-Access-PeriodSelect'])[2]").selectOption("3 месяца"));
-
             step("Проверить что 3 месяца выбрано верно", () ->
                     $x("(//*[@class='price-services-item__features " +
                             "HH-Adaptive-Resume-Access-Features'])[2]").shouldHave(text("В пакете с 450 публикациями вакансий «Стандарт»")));
-
             step("Нажать кнопку В корзину", () ->
                     $x("(//*[@class='price-services-item__add-to-cart'])[2]").click());
         });
@@ -94,21 +86,16 @@ public class PriceListTests extends TestBase {
     void addingPremiumToTheCart() {
         step("Открыть страницу https://hh.ru/price/recommended?from=header_new", () ->
                 open("https://hh.ru/price/recommended?from=header_new"));
-
         step("Перейти на вкладку Размещение вакансий", () ->
                 $(".bloko-tabs__items").$(byText("Размещение вакансий")).click());
-
         step("Проверить что вкладка открылась", () ->
                 $(".bloko-section").shouldHave(text("Премиум")));
 
         step("Выбрать количство и подтвердить", () -> {
-
             step("В столбце премиум ввести 100 шт.", () ->
                     $x("(//*[@data-qa='price__input'])[1]").val("100"));
-
             step("Проверить что сумма изменилась", () ->
                     $x("(//*[@class='publication__cost'])[1]").shouldHave(text("637 200 руб.")));
-
             step("Нажать В корзину", () ->
                     $x("(//*[@class='bloko-button bloko-button_stretched'])[1]").click());
         });

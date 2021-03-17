@@ -26,10 +26,8 @@ public class SearchOnTheSiteTests extends TestBase {
                 open("https://hh.ru/employer"));
 
         step("Ищем резюме", () -> {
-
             step("Ввести в строку поиска Qa engineer", () ->
                     $("[data-qa='search-input']").val("Qa engineer"));
-
             step("Нажать кнопку Найти сотрудника", () ->
                     $(".supernova-search-group__submit ").click());
         });
@@ -47,13 +45,10 @@ public class SearchOnTheSiteTests extends TestBase {
                 open("https://hh.ru/employer"));
 
         step("Ищем вакансии", () -> {
-
             step("Выбрать в поиске вкладку Вакансии", () ->
                     $("[data-qa='search-select']").$(byText("Вакансии")).click());
-
             step("Ввести в строку поиска Qa engineer", () ->
                     $("[data-qa='search-input']").val("Qa engineer"));
-
             step("Нажать кнопку Найти сотрудника", () ->
                     $(".supernova-search-group__submit ").click());
         });
@@ -71,13 +66,10 @@ public class SearchOnTheSiteTests extends TestBase {
                 open("https://hh.ru/employer"));
 
         step("Ищем сотрудника", () -> {
-
             step("Выбрать в поиске вкладку Компании", () ->
                     $("[data-qa='search-select']").$(byText("Компании")).click());
-
             step("Ввести в строку поиска Headhunter", () ->
                     $("[data-qa='search-input']").val("Headhunter"));
-
             step("Нажать кнопку Найти сотрудника", () ->
                     $(".supernova-search-group__submit ").click());
         });

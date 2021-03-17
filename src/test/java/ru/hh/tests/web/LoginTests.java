@@ -29,28 +29,19 @@ public class LoginTests extends TestBase {
 
         step("Открыть страницу https://hh.ru", () ->
                 open("https://hh.ru"));
-
-
         step("Проверить что страница открылась", () ->
                 $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого")));
 
 
         step("Нажать кнопку Войти", () ->
                 $(".supernova-navi_dashboard").$(byText("Войти")).click());
-
-
         step("Проверить что страница сменилась", () ->
                 $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет")));
-
         step("Заполнить форму", () -> {
-
             step("Ввести Email", () ->
                     $("[data-qa='login-input-username']").val(Email));
-
-
             step("Ввести Пароль", () ->
                     $("[data-qa='login-input-password']").val(Password));
-
             step("Нажать кнопку Войти в личный Кабинет", () ->
                     $("[data-qa='account-login-submit']").click());
         });
@@ -70,21 +61,16 @@ public class LoginTests extends TestBase {
 
         step("Проверить что страница открылась", () ->
                 $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого")));
-
         step("Нажать кнопку Войти", () ->
                 $(".supernova-navi_dashboard").$(byText("Войти")).click());
-
         step("Проверить что страница сменилась", () ->
                 $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет")));
 
         step("Заполнить форму", () -> {
-
             step("Ввести Email", () ->
                     $("[data-qa='login-input-username']").val("33333"));
-
             step("Ввести Пароль", () ->
                     $("[data-qa='login-input-password']").val("33333"));
-
             step("Нажать кнопку Войти в личный Кабинет", () ->
                     $("[data-qa='account-login-submit']").click());
         });
