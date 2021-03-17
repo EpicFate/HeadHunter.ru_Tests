@@ -77,16 +77,17 @@ public class PriceList_Tests extends TestBase {
         });
 
         step("В столбце Вся Россия выбрать 3 месяца", (step) -> {
-            $x("(//*[@data-qa='cart-item__period'])[2]").selectOption("3 месяца");
+            $x("(//*[@class='bloko-select                                            " +
+                    "HH-Adaptive-Resume-Access-PeriodSelect'])[2]").selectOption("3 месяца");
         });
 
         step("Проверить что 3 месяца выбрано верно", (step) -> {
-            $("[data-qa='cart-item__publications-included']").shouldHave(text("В пакете с 450 публикациями вакансий «Стандарт»"));
+            $x("(//*[@class='price-services-item__features " +
+                    "HH-Adaptive-Resume-Access-Features'])[2]").shouldHave(text("В пакете с 450 публикациями вакансий «Стандарт»"));
         });
 
         step("Нажать кнопку В корзину", (step) -> {
-//            $("[data-qa='cart-resume-access__button-add']").click();
-            $x("(//*[@data-qa='cart-resume-access__button-add'])[2]").click();
+            $x("(//*[@class='price-services-item__add-to-cart'])[2]").click();
         });
 
         step("Проверить что услуга в корзине", (step) -> {
