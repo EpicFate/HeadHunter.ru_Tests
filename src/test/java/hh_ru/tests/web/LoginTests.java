@@ -27,37 +27,44 @@ public class LoginTests extends TestBase {
         String Email = ConfigHelper.getHHruEmail();
         String Password = ConfigHelper.getHHruPassword();
 
-        step("Открыть страницу https://hh.ru", (step) -> {
-            open("https://hh.ru");
+        step("Открыть страницу https://hh.ru", () ->
+                open("https://hh.ru"));
+
+
+        step("Проверить что страница открылась", () ->
+                $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого"))
+        );
+
+
+        step("Нажать кнопку Войти", () ->
+                $(".supernova-navi_dashboard").$(byText("Войти")).click()
+        );
+
+
+        step("Проверить что страница сменилась", () ->
+                $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет"))
+        );
+
+        step("Заполнить форму", () -> {
+
+            step("Ввести Email", () ->
+                    $("[data-qa='login-input-username']").val(Email)
+            );
+
+
+            step("Ввести Пароль", () ->
+                    $("[data-qa='login-input-password']").val(Password)
+            );
+
+            step("Нажать кнопку Войти в личный Кабинет", () ->
+                    $("[data-qa='account-login-submit']").click()
+            );
         });
 
-        step("Проверить что страница открылась", (step) -> {
-            $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого"));
-        });
+        step("Поверить что мы зашли в личный кабинет", () ->
+                $(".index-dashboard-main-header").shouldHave(text("Найди работу мечты"))
+        );
 
-        step("Нажать кнопку Войти", (step) -> {
-            $(".supernova-navi_dashboard").$(byText("Войти")).click();
-        });
-
-        step("Проверить что страница сменилась", (step) -> {
-            $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет"));
-        });
-
-        step("Ввести Email", (step) -> {
-            $("[data-qa='login-input-username']").val(Email);
-        });
-
-        step("Ввести Пароль", (step) -> {
-            $("[data-qa='login-input-password']").val(Password);
-        });
-
-        step("Нажать кнопку Войти в личный Кабинет", (step) -> {
-            $("[data-qa='account-login-submit']").click();
-        });
-
-        step("Поверить что мы зашли в личный кабинет", (step) -> {
-            $(".index-dashboard-main-header").shouldHave(text("Найди работу мечты"));
-        });
     }
 
     @Test
@@ -65,36 +72,40 @@ public class LoginTests extends TestBase {
     @DisplayName("Неудачная авторизация")
     @Feature("Авторизация")
     void unsuccessfulLoginTest() {
-        step("Открыть страницу https://hh.ru", (step) -> {
-            open("https://hh.ru");
+        step("Открыть страницу https://hh.ru", () ->
+                open("https://hh.ru")
+        );
+
+        step("Проверить что страница открылась", () ->
+                $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого"))
+        );
+
+        step("Нажать кнопку Войти", () ->
+                $(".supernova-navi_dashboard").$(byText("Войти")).click()
+        );
+
+
+        step("Проверить что страница сменилась", () ->
+                $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет"))
+        );
+
+        step("Заполнить форму", () -> {
+
+            step("Ввести Email", () ->
+                    $("[data-qa='login-input-username']").val("33333")
+            );
+
+            step("Ввести Пароль", () ->
+                    $("[data-qa='login-input-password']").val("33333")
+            );
+
+            step("Нажать кнопку Войти в личный Кабинет", () ->
+                    $("[data-qa='account-login-submit']").click()
+            );
         });
 
-        step("Проверить что страница открылась", (step) -> {
-            $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого"));
-        });
-
-        step("Нажать кнопку Войти", (step) -> {
-            $(".supernova-navi_dashboard").$(byText("Войти")).click();
-        });
-
-        step("Проверить что страница сменилась", (step) -> {
-            $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет"));
-        });
-
-        step("Ввести Email", (step) -> {
-            $("[data-qa='login-input-username']").val("33333");
-        });
-
-        step("Ввести Пароль", (step) -> {
-            $("[data-qa='login-input-password']").val("33333");
-        });
-
-        step("Нажать кнопку Войти в личный Кабинет", (step) -> {
-            $("[data-qa='account-login-submit']").click();
-        });
-
-        step("Поверить что мы зашли в личный кабинет", (step) -> {
-            $(".index-dashboard-main-header").shouldHave(text("Найди работу мечты"));
-        });
+        step("Поверить что мы зашли в личный кабинет", () ->
+                $(".index-dashboard-main-header").shouldHave(text("Найди работу мечты"))
+        );
     }
 }

@@ -22,21 +22,21 @@ public class SearchOnTheSiteTests extends TestBase {
     @Feature("Поиск по сайту ")
     void resumeSearch() {
 
-        step("Открыть страницу https://hh.ru/employer", (step) -> {
-            open("https://hh.ru/employer");
-        });
+        step("Открыть страницу https://hh.ru/employer", () ->
+            open("https://hh.ru/employer")
+        );
 
-        step("Ввести в строку поиска Qa engineer", (step) -> {
-            $("[data-qa='search-input']").val("Qa engineer");
-        });
+        step("Ввести в строку поиска Qa engineer", () ->
+            $("[data-qa='search-input']").val("Qa engineer")
+        );
 
-        step("Нажать кнопку Найти сотрудника", (step) -> {
-            $(".supernova-search-group__submit ").click();
-        });
+        step("Нажать кнопку Найти сотрудника", () ->
+            $(".supernova-search-group__submit ").click()
+        );
 
-        step("Проверить что поиск удался", (step) -> {
-            $$("[class='resume-search-item']").shouldHaveSize(20);
-        });
+        step("Проверить что поиск удался", () ->
+            $$("[class='resume-search-item']").shouldHaveSize(20)
+        );
     }
 
     @Test
@@ -44,25 +44,25 @@ public class SearchOnTheSiteTests extends TestBase {
     @DisplayName("Поиск вакансии ")
     @Feature("Поиск по сайту ")
     void searchVacancy() {
-        step("Открыть страницу https://hh.ru/employer", (step) -> {
-            open("https://hh.ru/employer");
-        });
+        step("Открыть страницу https://hh.ru/employer", () ->
+            open("https://hh.ru/employer")
+        );
 
-        step("Выбрать в поиске вкладку Вакансии", (step) -> {
-            $("[data-qa='search-select']").$(byText("Вакансии")).click();
-        });
+        step("Выбрать в поиске вкладку Вакансии", () ->
+            $("[data-qa='search-select']").$(byText("Вакансии")).click()
+        );
 
-        step("Ввести в строку поиска Qa engineer", (step) -> {
-            $("[data-qa='search-input']").val("Qa engineer");
-        });
+        step("Ввести в строку поиска Qa engineer", () ->
+            $("[data-qa='search-input']").val("Qa engineer")
+        );
 
-        step("Нажать кнопку Найти сотрудника", (step) -> {
-            $(".supernova-search-group__submit ").click();
-        });
+        step("Нажать кнопку Найти сотрудника", () ->
+            $(".supernova-search-group__submit ").click()
+        );
 
-        step("Проверить что поиск удался", (step) -> {
-            $$("[data-qa='vacancy-serp__vacancy']").shouldHaveSize(45);
-        });
+        step("Проверить что поиск удался", () ->
+            $$("[data-qa='vacancy-serp__vacancy']").shouldHaveSize(45)
+        );
     }
 
     @Test
@@ -70,24 +70,24 @@ public class SearchOnTheSiteTests extends TestBase {
     @DisplayName("Поиск Компании")
     @Feature("Поиск по сайту ")
     void searchCompany() {
-        step("Открыть страницу https://hh.ru/employer", (step) -> {
-            open("https://hh.ru/employer");
-        });
+        step("Открыть страницу https://hh.ru/employer", () ->
+            open("https://hh.ru/employer")
+        );
 
-        step("Выбрать в поиске вкладку Компании", (step) -> {
-            $("[data-qa='search-select']").$(byText("Компании")).click();
-        });
+        step("Выбрать в поиске вкладку Компании", () ->
+            $("[data-qa='search-select']").$(byText("Компании")).click()
+        );
 
-        step("Ввести в строку поиска Headhunter", (step) -> {
-            $("[data-qa='search-input']").val("Headhunter");
-        });
+        step("Ввести в строку поиска Headhunter", () ->
+            $("[data-qa='search-input']").val("Headhunter")
+        );
 
-        step("Нажать кнопку Найти сотрудника", (step) -> {
-            $(".supernova-search-group__submit ").click();
-        });
+        step("Нажать кнопку Найти сотрудника", () ->
+            $(".supernova-search-group__submit ").click()
+        );
 
-        step("Проверить что поиск удался", (step) -> {
-            $(".l-nopaddings").shouldHave(text("HeadHunter"));
-        });
+        step("Проверить что поиск удался", () ->
+            $(".l-nopaddings").shouldHave(text("HeadHunter"))
+        );
     }
 }
