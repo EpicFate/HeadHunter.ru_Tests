@@ -74,7 +74,6 @@ public class LoginTests extends TestBase {
         step("Нажать кнопку Войти", () ->
                 $(".supernova-navi_dashboard").$(byText("Войти")).click());
 
-
         step("Проверить что страница сменилась", () ->
                 $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет")));
 
