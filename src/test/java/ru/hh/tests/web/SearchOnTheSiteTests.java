@@ -54,7 +54,7 @@ public class SearchOnTheSiteTests extends TestBase {
         });
 
         step("Проверить что поиск удался", () ->
-                $$("[data-qa='vacancy-serp__vacancy']").shouldHaveSize(40));
+                $$("[data-qa='vacancy-serp__vacancy']").shouldHaveSize(48));
     }
 
     @Test
