@@ -32,11 +32,11 @@ public class LoginTests extends TestBase {
         step("Проверить что страница открылась", () ->
                 $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого")));
 
-
         step("Нажать кнопку Войти", () ->
                 $(".supernova-navi_dashboard").$(byText("Войти")).click());
         step("Проверить что страница сменилась", () ->
                 $(".account-form-wrapper").shouldHave(text("Вход в личный кабинет")));
+
         step("Заполнить форму", () -> {
             step("Ввести Email", () ->
                     $("[data-qa='login-input-username']").val(Email));
@@ -58,9 +58,9 @@ public class LoginTests extends TestBase {
     void unsuccessfulLoginTest() {
         step("Открыть страницу https://hh.ru", () ->
                 open("https://hh.ru"));
-
         step("Проверить что страница открылась", () ->
                 $(".supernova-dashboard-header").shouldHave(text("Работа найдется для каждого")));
+
         step("Нажать кнопку Войти", () ->
                 $(".supernova-navi_dashboard").$(byText("Войти")).click());
         step("Проверить что страница сменилась", () ->
