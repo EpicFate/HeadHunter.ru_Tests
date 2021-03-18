@@ -60,17 +60,15 @@ public class PriceListTests extends TestBase {
         step("Перейти на вкладку Доступ к базе резюме", () ->
                 $(".bloko-tabs__items").$(byText("Доступ к базе резюме")).click());
         step("Проверить что вкладка открылась", () ->
-                $x("(//*[@class='price-services-item__header'])[2]").shouldHave(text("Вся Россия")));
+                $(".price-services-item__header",1).shouldHave(text("Вся Россия")));
 
         step("Выбрать количство и подтвердить", () -> {
             step("В столбце Вся Россия выбрать 3 месяца", () ->
-                    $x("(//*[@class='bloko-select                                            " +
-                            "HH-Adaptive-Resume-Access-PeriodSelect'])[2]").selectOption("3 месяца"));
+                    $(".HH-Adaptive-Resume-Access-PeriodSelect",1).selectOption("3 месяца"));
             step("Проверить что 3 месяца выбрано верно", () ->
-                    $x("(//*[@class='price-services-item__features " +
-                            "HH-Adaptive-Resume-Access-Features'])[2]").shouldHave(text("В пакете с 450 публикациями вакансий «Стандарт»")));
+                    $(".HH-Adaptive-Resume-Access-PublicationsContainer",1).shouldHave(text("В пакете с 450 публикациями вакансий «Стандарт»")));
             step("Нажать кнопку В корзину", () ->
-                    $x("(//*[@class='price-services-item__add-to-cart'])[2]").click());
+                    $(".price-services-item__add-to-cart",1).click());
         });
 
         step("Проверить что услуга в корзине", () ->
@@ -93,11 +91,11 @@ public class PriceListTests extends TestBase {
 
         step("Выбрать количство и подтвердить", () -> {
             step("В столбце премиум ввести 100 шт.", () ->
-                    $x("(//*[@data-qa='price__input'])[1]").val("100"));
+                    $("[data-qa='price__input']",0).val("100"));
             step("Проверить что сумма изменилась", () ->
-                    $x("(//*[@class='publication__cost'])[1]").shouldHave(text("637 200 руб.")));
+                    $(".publication__cost",0).shouldHave(text("637 200 руб.")));
             step("Нажать В корзину", () ->
-                    $x("(//*[@class='bloko-button bloko-button_stretched'])[1]").click());
+                    $(".bloko-button_stretched",1).click());
         });
 
         step("Проверить что услуга в корзине", () ->
