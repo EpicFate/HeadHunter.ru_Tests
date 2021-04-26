@@ -12,9 +12,9 @@ repositories {
 group 'hh.ru'
 version '1.0'
 
-def allureVersion = "2.13.8",
-    selenideVersion = "5.18.0",
-    junitVersion = "5.7.0"
+def allureVersion = "2.13.9",
+    selenideVersion = "5.20.4",
+    junitVersion = "5.7.1"
 
 allure {
     version = "${allureVersion}"
